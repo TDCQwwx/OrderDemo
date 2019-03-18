@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="OrderDemo.Views.UCOrderMarking"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrderDemo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="1800">
+    <Viewbox>
+        <Grid  Height="600" Width="1000" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="107*"/>
+                <RowDefinition Height="411*"/>
+                <RowDefinition Height="82*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="253*"/>
+                <ColumnDefinition Width="405*"/>
+                <ColumnDefinition Width="342*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"  Content="智慧工厂下单交付系统" 
+               HorizontalContentAlignment="Center" 
+               VerticalContentAlignment="Center" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center"
+               Background="{x:Null}" Foreground="#FFFDFDFD"
+               FontWeight="Bold" FontSize="50" FontFamily="Microsoft YaHei">
+            </Label>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" Fill="Gray" Opacity="0.3" Height="90"  Width="180" RenderTransformOrigin="1.298,0.543"  RadiusX="5" RadiusY="5"/>
+                <Rectangle Grid.Row="1" Fill="Blue" Opacity="0.3" Height="90"  Width="180" RenderTransformOrigin="1.298,0.543"  RadiusX="5" RadiusY="5"/>
+                <Rectangle Grid.Row="2" Fill="Gray" Opacity="0.3" Height="90"  Width="180" RenderTransformOrigin="1.298,0.543"  RadiusX="5" RadiusY="5"/>
+                <Label Grid.Row="0" Content="轮廓外形定制" Width="176" Height="88" Foreground="#FFFDFDFD" BorderThickness="0" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Microsoft YaHei" Background="{x:Null}"/>
+                <Label Grid.Row="1" Content="打标信息定制" Background="{x:Null}"  Width="176" Height="88" Foreground="#FFFDFDFD" BorderThickness="0" BorderBrush="{x:Null}" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Microsoft YaHei"/>
+                <Label Grid.Row="2" Content="产品订单提交" Background="{x:Null}"  Width="176" Height="88" Foreground="#FFFDFDFD" BorderThickness="0" BorderBrush="{x:Null}" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Microsoft YaHei"/>
+            </Grid>
+            <Button Grid.Row="3" Grid.Column="1" Style="{DynamicResource ButtonStyle03}" Content="轮廓外形定制" BorderBrush="{x:Null}"  FontSize="20" Foreground="#FFFDFDFD" VerticalAlignment="Stretch" HorizontalAlignment="Right" FontWeight="Bold" BorderThickness="0" Height="66" Width="266" Background="{x:Null}" Command="{Binding UCOrderMarkingSwitchtoUCOrderUCOrderExteriorCommand}"/>
+            <Button Grid.Row="3" Grid.Column="2" Style="{DynamicResource ButtonStyle03}" Content="订单提交" BorderBrush="{x:Null}"  FontSize="20" Foreground="#FFFDFDFD" VerticalAlignment="Stretch" FontWeight="Bold" BorderThickness="0" Height="66" Width="266" Background="{x:Null}" Command="{Binding UCOrderMarkingSwitchtoUCOrderSubmitOrderCommand}"/>
+            <Path Grid.Row="3" Grid.Column="1" Data="M 50,138.5 L10,167 48.5,195.5" HorizontalAlignment="Left" Stretch="Fill" Stroke="White" StrokeThickness="2" Margin="180 30" Width="20"/>
+            <Path Grid.Row="3" Grid.Column="1" Data="M 50,138.5 L10,167 48.5,195.5" HorizontalAlignment="Left" Stretch="Fill" Stroke="White" StrokeThickness="2" Margin="160 30" Width="20"/>
+            <Path Grid.Row="3" Grid.Column="2" Data="M50,138.5 L93.5,167 48.5,195.5" HorizontalAlignment="Right" Stretch="Fill" Stroke="White" StrokeThickness="2" Margin="80 30" Width="20"/>
+            <Path Grid.Row="3" Grid.Column="2" Data="M50,138.5 L93.5,167 48.5,195.5" HorizontalAlignment="Right" Stretch="Fill" Stroke="White" StrokeThickness="2" Margin="100 30" Width="20"/>
+            <Canvas Name="cv4" Grid.ColumnSpan="3" Grid.RowSpan="3">
+                <!--图片区域-->
+                <Grid x:Name="gridOrderStyle" Canvas.Left="243" Canvas.Top="61" Height="558" Width="455">
+                    <Border Style="{StaticResource borDer1}" Canvas.Left="412" Canvas.Top="119" Background="#FF3F6192" BorderBrush="Gray" CornerRadius="25" Margin="10,47,39,99" BorderThickness="1.5" Opacity="0.4"/>
+                    <Ellipse HorizontalAlignment="Left" Height="286" Margin="62,106,0,0" StrokeThickness="2" VerticalAlignment="Top" Width="296" Fill="#FFBFBFBF" Opacity="0.4"/>
+                    <Label x:Name="lblPrintContent" Content="{Binding ElementName=tbxPrintContent,Path=Text,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" Margin="62,183,97,317" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="{x:Null}" FontSize="20" />
+                    <Image x:Name="imagePrintContentQRCode" Margin="62,246,97,238"/>
+                </Grid>
+                <Label Content="请输入打标信息：" Background="{x:Null}" Canvas.Top="200" Width="166" Height="34" Foreground="#FFFDFDFD" BorderThickness="0" BorderBrush="{x:Null}" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Microsoft YaHei" Canvas.Left="716" RenderTransformOrigin="0.55,0.729"/>
+                <!--<Rectangle  Fill="Gray" Height="67" Canvas.Top="260" Width="250" RenderTransformOrigin="1.298,0.543"   RadiusX="5" RadiusY="5" Opacity="0.3" Canvas.Left="715"/>-->
+                <TextBox x:Name="tbxPrintContent" Text="{Binding MarkingInfo}" Height="67" Width="250" Canvas.Left="715" Canvas.Top="260" Background="Gray" Opacity="0.3" Foreground="Black" BorderBrush="{x:Null}"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" CaretBrush="Black" TextChanged="txtPrintContentQRCode_TextChanged"/>
+            </Canvas>
+        </Grid>
+    </Viewbox>
+</UserControl>

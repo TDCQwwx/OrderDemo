@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="OrderDemo.Views.UCOrderExterior"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrderDemo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="1800">
+    <Viewbox>
+        <Grid Height="600" Width="1000">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="107*"/>
+                <RowDefinition Height="411*"/>
+                <RowDefinition Height="82*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="253*"/>
+                <ColumnDefinition Width="405*"/>
+                <ColumnDefinition Width="342*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"  Content="智慧工厂下单交付系统" 
+               HorizontalContentAlignment="Center" 
+               VerticalContentAlignment="Center" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center"
+               Background="{x:Null}" Foreground="#FFFDFDFD"
+               FontWeight="Bold" FontSize="50" FontFamily="Microsoft YaHei">
+            </Label>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" Fill="Blue" Opacity="0.3" Height="90"  Width="180" RenderTransformOrigin="1.298,0.543"  RadiusX="5" RadiusY="5"/>
+                <Rectangle Grid.Row="1" Fill="Gray" Opacity="0.3" Height="90"  Width="180" RenderTransformOrigin="1.298,0.543"  RadiusX="5" RadiusY="5"/>
+                <Rectangle Grid.Row="2" Fill="Gray" Opacity="0.3" Height="90"  Width="180" RenderTransformOrigin="1.298,0.543"  RadiusX="5" RadiusY="5"/>
+                <Label Grid.Row="0" Content="轮廓外形定制" Width="176" Height="88" Foreground="#FFFDFDFD" BorderThickness="0" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Microsoft YaHei" Background="{x:Null}"/>
+                <Label Grid.Row="1" Content="打标信息定制" Background="{x:Null}"  Width="176" Height="88" Foreground="#FFFDFDFD" BorderThickness="0" BorderBrush="{x:Null}" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Microsoft YaHei"/>
+                <Label Grid.Row="2" Content="产品订单提交" Background="{x:Null}"  Width="176" Height="88" Foreground="#FFFDFDFD" BorderThickness="0" BorderBrush="{x:Null}" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Microsoft YaHei"/>
+            </Grid>
+            <Button Grid.Row="3" Grid.Column="1" Style="{DynamicResource ButtonStyle03}" Content="打标信息定制" BorderBrush="{x:Null}"  FontSize="20" Foreground="#FFFDFDFD" HorizontalAlignment="Right" VerticalAlignment="Stretch" FontWeight="Bold" BorderThickness="0" Height="66" Width="266" Background="{x:Null}" Command="{Binding UCOrderExteriorSwitchtoUCOrderMarkingCommand}"/>
+            <Button Grid.Row="3" Grid.Column="2" Style="{DynamicResource ButtonStyle03}" Content="首页" BorderBrush="{x:Null}"  FontSize="20" Foreground="#FFFDFDFD" VerticalAlignment="Stretch" FontWeight="Bold" BorderThickness="0" Height="66" Width="266" Background="{x:Null}" Command="{Binding UCOrderExteriorBacktoWndHomeCommand}"/>
+
+
+            <Path Grid.Row="3" Grid.Column="1" Data="M50,138.5 L93.5,167 48.5,195.5" HorizontalAlignment="Right" Stretch="Fill" Stroke="White" StrokeThickness="2" Margin="50 30" Width="20"/>
+            <Path Grid.Row="3" Grid.Column="1" Data="M50,138.5 L93.5,167 48.5,195.5" HorizontalAlignment="Right" Stretch="Fill" Stroke="White" StrokeThickness="2" Margin="30 30" Width="20"/>
+
+
+            <Path Grid.Row="3" Grid.Column="2" Data="M 50,138.5 L10,167 48.5,195.5" HorizontalAlignment="Left" Stretch="Fill" Stroke="White" StrokeThickness="2" Margin="120 30" Width="20"/>
+            <Path Grid.Row="3" Grid.Column="2" Data="M50,138.5 L93.5,167 48.5,195.5" HorizontalAlignment="Right" Stretch="Fill" Stroke="White" StrokeThickness="2" Margin="120 30" Width="20"/>
+            <Canvas Name="canvasMain" Height="600" Width="1000" Visibility="Visible" Margin="0,38,0,-38" Grid.ColumnSpan="3" Grid.RowSpan="3">
+                <!--产品颜色 -->
+                <Path>
+                    <Path.Fill>
+                        <SolidColorBrush x:Name="SnColorTemplate" Color="#FF828282"/>
+                    </Path.Fill>
+                </Path>
+                <!--产品背景区域-->
+                <Grid x:Name="gridOrderStyle" Canvas.Left="243" Canvas.Top="21" Height="558" Width="455">
+                    <Border Style="{StaticResource borDer1}" Canvas.Left="412" Canvas.Top="119" Background="#FF3F6192" BorderBrush="Gray" CornerRadius="25" Margin="10,47,39,99" BorderThickness="1.5" Opacity="0.4"/>
+                </Grid>
+                <!--需要的控件-->
+                <Label Content="轮廓外形定制：" Background="{x:Null}" Canvas.Top="90" Width="144" Height="34" Foreground="#FFFDFDFD" BorderThickness="0" BorderBrush="{x:Null}" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Microsoft YaHei" Canvas.Left="716" RenderTransformOrigin="0.55,0.729"/>
+                <Button x:Name="btnDefaultMode" Style="{StaticResource SwitchImageButtonStyle}" Content="默认"  Canvas.Left="723"  Canvas.Top="140" Width="137" Height="47" BorderBrush="{x:Null}"  FontSize="20" Foreground="White" VerticalAlignment="Stretch" FontWeight="Bold" BorderThickness="0" Background="#19808080" Click="btnDefaultMode_Click"/>
+                <Button x:Name="btnCustomizeMode" Style="{StaticResource SwitchImageButtonStyle}" Content="自定义"  Canvas.Left="857"  Canvas.Top="140" Width="137" Height="47" BorderBrush="{x:Null}"  FontSize="20" Foreground="White" VerticalAlignment="Stretch" FontWeight="Bold" BorderThickness="0" Background="#19808080" Click="btnCustomizeMode_Click"/>
+                <Slider x:Name="sliderX1" Canvas.Top="210" Canvas.Left="715" Height="27" Width="229" Value="{Binding SliderValue1}" Visibility="Hidden"/>
+                <Slider x:Name="sliderX2" Canvas.Top="260" Canvas.Left="715" Height="27" Width="229" Maximum="8" Opacity="0.8" Value="{Binding SliderValue2}" SmallChange="0.01"/>
+                <Slider x:Name="sliderX3" Canvas.Top="310" Canvas.Left="715" Height="27" Width="229" Maximum="8" Opacity="0.8" Value="{Binding SliderValue3}" SmallChange="0.01"/>
+                <Slider x:Name="sliderX4" Canvas.Top="360" Canvas.Left="715" Height="27" Width="229" Maximum="8" Opacity="0.8" Value="{Binding SliderValue4}" SmallChange="0.01"/>
+                <Slider x:Name="sliderX5" Canvas.Top="410" Canvas.Left="717" Height="27" Width="227" Value="{Binding SliderValue5}" Visibility="Hidden"/>
+            </Canvas>
+            <Canvas x:Name="canvasExterior" AutomationProperties.Name="canvasExterior" Grid.Column="1" Grid.Row="1" />
+        </Grid>
+    </Viewbox>
+</UserControl>

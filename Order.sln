@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderDemo", "OrderDemo\OrderDemo.csproj", "{56BA8B2A-85F2-40D2-BBFE-FA1C1E373A8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56BA8B2A-85F2-40D2-BBFE-FA1C1E373A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BA8B2A-85F2-40D2-BBFE-FA1C1E373A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56BA8B2A-85F2-40D2-BBFE-FA1C1E373A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BA8B2A-85F2-40D2-BBFE-FA1C1E373A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+		SolutionGuid = {EEEFE0B2-EE1A-4F2C-BD2C-1F887CEEFCCD}
+	EndGlobalSection
+EndGlobal
